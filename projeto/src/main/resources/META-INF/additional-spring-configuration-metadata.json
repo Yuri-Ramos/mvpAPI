@@ -1,0 +1,17 @@
+{"properties": [
+    {
+      "name": "projetoability.jwt.refresh.expiration",
+      "type": "java.lang.String",
+      "description": "JWT expiration refresh token value"
+    },
+    {
+      "name": "projetoability.jwt.expiration",
+      "type": "java.lang.String",
+      "description": "JWT expiration token value"
+    },
+    {
+      "name": "projetoability.jwt.secret",
+      "type": "java.lang.String",
+      "description": "JWT secret value"
+    }
+  ]}
