@@ -3,7 +3,7 @@ name: Maven Package
 on:
   release:
     types: [created]
-  workflow_dispatch: # Permite a execução manual do workflow
+  workflow_dispatch:
 
 jobs:
   build:
@@ -22,14 +22,13 @@ jobs:
       with:
         java-version: '11'
         distribution: 'temurin'
-        server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
-        settings-path: ${{ github.workspace }} # location for the settings.xml file
+        server-id: github
+        settings-path: ${{ github.workspace }}
 
     - name: Build with Maven
-      run: mvn -B package -f pom.xml
+      run: mvn -B package -f caminho/correto/do/pom.xml # Atualize com o caminho real
 
     - name: Publish to GitHub Packages
       run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
